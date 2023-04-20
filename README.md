@@ -23,3 +23,4 @@ Understand the 🍌 [Serverless framework](https://docs.banana.dev/banana-docs/c
 Generalize this framework to [deploy anything on Banana](https://docs.banana.dev/banana-docs/resources/how-to-serve-anything-on-banana).
 
 ## Use Banana for scale.
+##
