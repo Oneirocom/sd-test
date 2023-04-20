@@ -3,3 +3,10 @@ torch
 diffusers[torch]
 git+https://github.com/huggingface/transformers.git
 websockets==10.0
+torchaudio
+typing
+pydub
+scipy
+transformers
+accelerate
+Pillow
