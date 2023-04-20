@@ -5,6 +5,8 @@ import base64
 from io import BytesIO
 import os
 
+def dummy_checker(images, **kwargs): return images, False
+
 def init():
     global model
     HF_AUTH_TOKEN = os.getenv("HF_AUTH_TOKEN")
@@ -26,6 +28,8 @@ def inference(model_inputs:dict):
     
     generator = None
     if seed: generator = torch.Generator("cuda").manual_seed(seed)
+    
+    model.safety_checker = dummy_checker
     
     with autocast("cuda"):
         image = model(prompt, guidance_scale=guidance_scale, height=height, width=width, num_inference_steps=steps, generator=generator).images[0]
