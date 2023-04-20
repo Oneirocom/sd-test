@@ -10,7 +10,7 @@ def init():
     HF_AUTH_TOKEN = os.getenv("HF_AUTH_TOKEN")
     repo = 'spaceinvader/fb'
     scheduler = DPMSolverMultistepScheduler.from_pretrained(repo, subfolder="scheduler")
-    model = DiffusionPipeline.from_pretrained(repo, torch_dtype=torch.float16, revision="fp16", scheduler=scheduler, use_auth_token=HF_AUTH_TOKEN).to("cuda")    
+    model = DiffusionPipeline.from_pretrained(repo, torch_dtype=torch.float16, revision="main", scheduler=scheduler, use_auth_token=HF_AUTH_TOKEN).to("cuda")    
 
 def inference(model_inputs:dict):
     global model
